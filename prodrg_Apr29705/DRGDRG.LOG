@@ -1,0 +1,555 @@
+ PROGRAM : PRODRG
+ CONVERTS PDB TO TOPOLOGY BUILDING BLOCK!!!!
+  
+ WRITTEN BY D.M.F. VAN AALTEN AND A. SCHUETTELKOPF 1993-2008
+ 
+ CALLED WITH THE FOLLOWING ARGUMENTS
+
+  1: in.pdb                                                                          
+  2: /home/pi/prodrg/bin/prodrg.param                                                
+  3: VAC EM CGRP NOITER
+
+
+ CONNECTION TABLE
+
+          70  ATOMS
+    1  O1   ,        2    1   36
+    2  O2   ,        2    1   43
+    3  O3   ,        2    1   56
+    4  O4   ,        2    1   55
+    5  O5   ,        2    1   56
+    6  O6   ,        2    1   57
+    7  O7   ,        2    1   70
+    8  O8   ,        2    1   70
+    9  N1   ,        2    3   25   43   10
+   10  H13  ,        0    1    9
+   11  N2   ,        2    3   36   46   12
+   12  H23  ,        0    1   11
+   13  N3   -        2    3   44   57   14
+   14  H33  ,        0    1   13
+   15  N4   +        3    4   48   16   17   18
+   16  H43  ,        0    1   15
+   17  H44  ,        0    1   15
+   18  H45  ,        0    1   15
+   19  N5   -        2    3   55   60   20
+   20  H5   ,        0    1   19
+   21  N6   +        3    4   58   22   23   24
+   22  H63  ,        0    1   21
+   23  H64  ,        0    1   21
+   24  H65  ,        0    1   21
+   25  C1   +        3    4    9   27   36   26
+   26  H1   ,        0    1   25
+   27  C2   +        3    4   25   30   28   29
+   28  H21  ,        0    1   27
+   29  H22  ,        0    1   27
+   30  C3   +        3    4   27   33   31   32
+   31  H31  ,        0    1   30
+   32  H32  ,        0    1   30
+   33  C4   +        3    4   30   48   34   35
+   34  H41  ,        0    1   33
+   35  H42  ,        0    1   33
+   36  C5   +        2    3    1   11   25
+   37  C6   +        3    4   40   43   38   39
+   38  H61  ,        0    1   37
+   39  H62  ,        0    1   37
+   40  C7   +        3    4   37   44   41   42
+   41  H71  ,        0    1   40
+   42  H72  ,        0    1   40
+   43  C8   +        2    3    2    9   37
+   44  C9   +        3    4   13   40   56   45
+   45  H9   ,        0    1   44
+   46  C10  +        3    4   11   51   55   47
+   47  H10  ,        0    1   46
+   48  C11  +        3    4   15   33   49   50
+   49  H11  ,        0    1   48
+   50  H9L  ,        0    1   48
+   51  C12  +        3    4   46   52   53   54
+   52  H12  ,        0    1   51
+   53  H9M  ,        0    1   51
+   54  H9N  ,        0    1   51
+   55  C13  +        2    3    4   19   46
+   56  C14  +        2    3    3    5   44
+   57  C15  +        2    3    6   13   58
+   58  C16  +        3    4   21   57   62   59
+   59  H16  ,        0    1   58
+   60  C17  +        3    4   19   66   70   61
+   61  H17  ,        0    1   60
+   62  C18  +        3    4   58   63   64   65
+   63  H18  ,        0    1   62
+   64  H9O  ,        0    1   62
+   65  H9P  ,        0    1   62
+   66  C19  +        3    4   60   67   68   69
+   67  H19  ,        0    1   66
+   68  H9Q  ,        0    1   66
+   69  H9R  ,        0    1   66
+   70  C20  -        2    3    7    8   60
+
+    1  O7   ,        2    1    2
+    2  C20  -        2    3    1    3    4
+    3  O8   ,        2    1    2
+    4  C17  -        3    4    2    5    6   10
+    5  H17  ,        0    1    4
+    6  C19  +        3    4    4    7    8    9
+    7  H9Q  ,        0    1    6
+    8  H9R  ,        0    1    6
+    9  H19  ,        0    1    6
+   10  N5   -        2    3    4   11   12
+   11  H5   ,        0    1   10
+   12  C13  +        2    3   10   13   14
+   13  O4   ,        2    1   12
+   14  C10  -        3    4   12   15   16   20
+   15  H10  ,        0    1   14
+   16  C12  +        3    4   14   17   18   19
+   17  H9M  ,        0    1   16
+   18  H9N  ,        0    1   16
+   19  H12  ,        0    1   16
+   20  N2   ,        2    3   14   21   22
+   21  H23  ,        0    1   20
+   22  C5   +        2    3   20   23   24
+   23  O1   ,        2    1   22
+   24  C1   -        3    4   22   25   26   42
+   25  H1   ,        0    1   24
+   26  C2   +        3    4   24   27   28   29
+   27  H21  ,        0    1   26
+   28  H22  ,        0    1   26
+   29  C3   +        3    4   26   30   31   32
+   30  H31  ,        0    1   29
+   31  H32  ,        0    1   29
+   32  C4   +        3    4   29   33   34   35
+   33  H41  ,        0    1   32
+   34  H42  ,        0    1   32
+   35  C11  -        3    4   32   36   37   38
+   36  H11  ,        0    1   35
+   37  H9L  ,        0    1   35
+   38  N4   +        3    4   35   39   40   41
+   39  H44  ,        0    1   38
+   40  H45  ,        0    1   38
+   41  H43  ,        0    1   38
+   42  N1   ,        2    3   24   43   44
+   43  H13  ,        0    1   42
+   44  C8   +        2    3   42   45   46
+   45  O2   ,        2    1   44
+   46  C6   -        3    4   44   47   48   49
+   47  H61  ,        0    1   46
+   48  H62  ,        0    1   46
+   49  C7   +        3    4   46   50   51   52
+   50  H71  ,        0    1   49
+   51  H72  ,        0    1   49
+   52  C9   +        3    4   49   53   54   57
+   53  H9   ,        0    1   52
+   54  C14  +        2    3   52   55   56
+   55  O5   ,        2    1   54
+   56  O3   ,        2    1   54
+   57  N3   -        2    3   52   58   59
+   58  H33  ,        0    1   57
+   59  C15  +        2    3   57   60   61
+   60  O6   ,        2    1   59
+   61  C16  +        3    4   59   62   63   67
+   62  H16  ,        0    1   61
+   63  C18  +        3    4   61   64   65   66
+   64  H9O  ,        0    1   63
+   65  H9P  ,        0    1   63
+   66  H18  ,        0    1   63
+   67  N6   +        3    4   61   68   69   70
+   68  H64  ,        0    1   67
+   69  H65  ,        0    1   67
+   70  H63  ,        0    1   67
+
+
+ THE FINAL DRUG DESCRIPTOR
+
+7210 0,9230 0-7210 0,9331 6-9313 3+6221-1-1010 0,9230 0+7210 0,933112-9313 9+6221-1,1010 0,9230 0+7210 0,933120-932215+932214+932216+932217-631318+1010 0,1010 0,1010 0,6221-1,1010 0,9230 0+7210 0,932222-932221+933123+9230 0+7210 0,7210 0,6221 0-1010 0,9230 0+7210 0,933130+931327+6313-1+1010 0,1010 0,1010 0,
+
+
+ ASSIGNED ATOM TYPES / CONNECTIVITY
+
+ N  NAME     FFTYPE GC    PDTYPE PC DESCRIPTION                    SP 5 6 NCON  CONNECTIONS
+  1 O7           OM  2        OM  2 CARBOXYL OXYGEN (CO-)           2 F F  1    2
+  2 C20           C 11         C 11 BARE CARBON                     2 F F  3    1   3   4
+  3 O8           OM  2        OM  2 CARBOXYL OXYGEN (CO-)           2 F F  1    2
+  4 C17         CH1 12       CH1 12 ALIPHATIC CH-GROUP              3 F F  4    2   5   6  10
+  5 H17          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1    4
+  6 C19         CH3 14       CH3 14 ALIPHATIC CH3-GROUP             3 F F  4    4   7   8   9
+  7 H9Q          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1    6
+  8 H9R          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1    6
+  9 H19          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1    6
+ 10 N5            N  5         N  5 PEPTIDE NITROGEN (N OR NH)      2 F F  3    4  11  12
+ 11 H5            H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   10
+ 12 C13           C 11         C 11 BARE CARBON                     2 F F  3   10  13  14
+ 13 O4            O  1         O  1 CARBONYL OXYGEN (C=O)           2 F F  1   12
+ 14 C10         CH1 12       CH1 12 ALIPHATIC CH-GROUP              3 F F  4   12  15  16  20
+ 15 H10          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   14
+ 16 C12         CH3 14       CH3 14 ALIPHATIC CH3-GROUP             3 F F  4   14  17  18  19
+ 17 H9M          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   16
+ 18 H9N          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   16
+ 19 H12          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   16
+ 20 N2            N  5         N  5 PEPTIDE NITROGEN (N OR NH)      2 F F  3   14  21  22
+ 21 H23           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   20
+ 22 C5            C 11         C 11 BARE CARBON                     2 F F  3   20  23  24
+ 23 O1            O  1         O  1 CARBONYL OXYGEN (C=O)           2 F F  1   22
+ 24 C1          CH1 12       CH1 12 ALIPHATIC CH-GROUP              3 F F  4   22  25  26  42
+ 25 H1           HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   24
+ 26 C2          CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   24  27  28  29
+ 27 H21          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   26
+ 28 H22          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   26
+ 29 C3          CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   26  30  31  32
+ 30 H31          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   29
+ 31 H32          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   29
+ 32 C4          CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   29  33  34  35
+ 33 H41          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   32
+ 34 H42          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   32
+ 35 C11         CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   32  36  37  38
+ 36 H11          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   35
+ 37 H9L          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   35
+ 38 N4           NL  7        NL  7 TERMINAL NITROGEN (NH3)         3 F F  4   35  39  40  41
+ 39 H44           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   38
+ 40 H45           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   38
+ 41 H43           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   38
+ 42 N1            N  5         N  5 PEPTIDE NITROGEN (N OR NH)      2 F F  3   24  43  44
+ 43 H13           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   42
+ 44 C8            C 11         C 11 BARE CARBON                     2 F F  3   42  45  46
+ 45 O2            O  1         O  1 CARBONYL OXYGEN (C=O)           2 F F  1   44
+ 46 C6          CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   44  47  48  49
+ 47 H61          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   46
+ 48 H62          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   46
+ 49 C7          CH2 13       CH2 13 ALIPHATIC CH2-GROUP             3 F F  4   46  50  51  52
+ 50 H71          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   49
+ 51 H72          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   49
+ 52 C9          CH1 12       CH1 12 ALIPHATIC CH-GROUP              3 F F  4   49  53  54  57
+ 53 H9           HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   52
+ 54 C14           C 11         C 11 BARE CARBON                     2 F F  3   52  55  56
+ 55 O5           OM  2        OM  2 CARBOXYL OXYGEN (CO-)           2 F F  1   54
+ 56 O3           OM  2        OM  2 CARBOXYL OXYGEN (CO-)           2 F F  1   54
+ 57 N3            N  5         N  5 PEPTIDE NITROGEN (N OR NH)      2 F F  3   52  58  59
+ 58 H33           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   57
+ 59 C15           C 11         C 11 BARE CARBON                     2 F F  3   57  60  61
+ 60 O6            O  1         O  1 CARBONYL OXYGEN (C=O)           2 F F  1   59
+ 61 C16         CH1 12       CH1 12 ALIPHATIC CH-GROUP              3 F F  4   59  62  63  67
+ 62 H16          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   61
+ 63 C18         CH3 14       CH3 14 ALIPHATIC CH3-GROUP             3 F F  4   61  64  65  66
+ 64 H9O          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   63
+ 65 H9P          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   63
+ 66 H18          HC 16        HC 16 HYDROGEN BOUND TO CARBON        0 F F  1   63
+ 67 N6           NL  7        NL  7 TERMINAL NITROGEN (NH3)         3 F F  4   61  68  69  70
+ 68 H64           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   67
+ 69 H65           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   67
+ 70 H63           H 17         H 17 HYDROGEN NOT BOUND TO CARBON    0 F F  1   67
+
+
+ MOLECULE INFO
+
+  MOL. FORMULA:  C20 H36 N6 O8
+  MOL. MASS   :  488.54 U
+
+
+ TOPOLOGY WOES
+
+  - Undetermined angle  H17  C17  N5  [       HC-      CH1-        N],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     4
+    Picked type  17 with score  4.
+
+  - Undetermined angle  H9Q  C19  H9R [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9Q  C19  H19 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9R  C19  H19 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  C17  N5   H5  [      CH1-        N-        H],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        22         H-        N-      CH3     8
+    Picked type  22 with score  8.
+
+  - Undetermined angle  H10  C10  N2  [       HC-      CH1-        N],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     4
+    Picked type  17 with score  4.
+
+  - Undetermined angle  H9M  C12  H9N [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9M  C12  H12 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9N  C12  H12 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  C10  N2   H23 [      CH1-        N-        H],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        22         H-        N-      CH3     8
+    Picked type  22 with score  8.
+
+  - Undetermined angle  H1   C1   N1  [       HC-      CH1-        N],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     4
+    Picked type  17 with score  4.
+
+  - Undetermined angle  H21  C2   H22 [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H31  C3   H32 [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H41  C4   H42 [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H11  C11  H9L [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H11  C11  N4  [       HC-      CH2-       NL],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     2
+        20       CHx-      CHx-      N2x     4
+        85        HC-      CHx-       Cx     6
+    Picked type  85 with score  6.
+
+  - Undetermined angle  H9L  C11  N4  [       HC-      CH2-       NL],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     2
+        20       CHx-      CHx-      N2x     4
+        85        HC-      CHx-       Cx     6
+    Picked type  85 with score  6.
+
+  - Undetermined angle  C1   N1   H13 [      CH1-        N-        H],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        22         H-        N-      CH3     8
+    Picked type  22 with score  8.
+
+  - Undetermined angle  H61  C6   H62 [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H71  C7   H72 [       HC-      CH2-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9   C9   N3  [       HC-      CH1-        N],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     4
+    Picked type  17 with score  4.
+
+  - Undetermined angle  C9   N3   H33 [      CH1-        N-        H],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        22         H-        N-      CH3     8
+    Picked type  22 with score  8.
+
+  - Undetermined angle  C15  C16  N6  [        C-      CH1-       NL],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        14        Cx-      CHx-       Cx     6
+        18        Cx-      CHx-       NE     8
+    Picked type  18 with score  8.
+
+  - Undetermined angle  H16  C16  N6  [       HC-      CH1-       NL],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        17        Cx-      CHx-        N     2
+        20       CHx-      CHx-      N2x     4
+        85        HC-      CHx-       Cx     6
+    Picked type  85 with score  6.
+
+  - Undetermined angle  H9O  C18  H9P [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9O  C18  H18 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined angle  H9P  C18  H18 [       HC-      CH3-       HC],
+    finding best match:
+         1       CH2-       CS-      CH2     0
+        85        HC-      CHx-       Cx     4
+    Picked type  85 with score  4.
+
+  - Undetermined flat improper at O7  , picked default type.
+
+  - Undetermined flat improper at C17 , picked default type.
+
+  - Undetermined flat improper at H17 , picked default type.
+
+  - Undetermined flat improper at H9R , picked default type.
+
+  - Undetermined flat improper at H19 , picked default type.
+
+  - Undetermined flat improper at C12 , picked default type.
+
+  - Undetermined flat improper at H9M , picked default type.
+
+  - Undetermined flat improper at H23 , picked default type.
+
+  - Undetermined flat improper at C5  , picked default type.
+
+  - Undetermined flat improper at O1  , picked default type.
+
+  - Undetermined dihedral  O7   C20  C17  N5  [       OM-        C-      CH1-        N],
+    finding best match:
+         1     X-        C-        C-    Y     7
+        33     X-      CH2-        C-    Y     8
+    Picked type  33 with score  8.
+
+  - Undetermined dihedral  C20  C17  N5   C13 [        C-      CH1-        N-        C],
+    finding best match:
+         1     X-        C-        C-    Y     3
+         5     X-        C-        N-    Y     7
+        31     X-      CH2-        N-    Y     8
+    Picked type  31 with score  8.
+
+  - Undetermined dihedral  N5   C13  C10  N2  [        N-        C-      CH1-        N],
+    finding best match:
+         1     X-        C-        C-    Y     7
+        33     X-      CH2-        C-    Y     8
+    Picked type  33 with score  8.
+
+  - Undetermined dihedral  C13  C10  N2   C5  [        C-      CH1-        N-        C],
+    finding best match:
+         1     X-        C-        C-    Y     3
+         5     X-        C-        N-    Y     7
+        31     X-      CH2-        N-    Y     8
+    Picked type  31 with score  8.
+
+  - Undetermined dihedral  N2   C5   C1   N1  [        N-        C-      CH1-        N],
+    finding best match:
+         1     X-        C-        C-    Y     7
+        33     X-      CH2-        C-    Y     8
+    Picked type  33 with score  8.
+
+  - Undetermined dihedral  C5   C1   N1   C8  [        C-      CH1-        N-        C],
+    finding best match:
+         1     X-        C-        C-    Y     3
+         5     X-        C-        N-    Y     7
+        31     X-      CH2-        N-    Y     8
+    Picked type  31 with score  8.
+
+  - Undetermined dihedral  C4   C11  N4   H43 [      CH2-      CH2-       NL-        H],
+    finding best match:
+         1     X-        C-        C-    Y     2
+         2     X-      CR0-       OA-    Y     3
+         5     X-        C-        N-    Y     5
+        16     X-      CH2-       OA-    Y     6
+        19     X-        C-       NL-    Y     7
+        22     X-       CS-       NL-    Y     8
+    Picked type  22 with score  8.
+
+  - Undetermined dihedral  C7   C9   C14  O3  [      CH2-      CH1-        C-       OM],
+    finding best match:
+         1     X-        C-        C-    Y     7
+        33     X-      CH2-        C-    Y     8
+    Picked type  33 with score  8.
+
+  - Undetermined dihedral  C7   C9   N3   C15 [      CH2-      CH1-        N-        C],
+    finding best match:
+         1     X-        C-        C-    Y     3
+         5     X-        C-        N-    Y     7
+        31     X-      CH2-        N-    Y     8
+    Picked type  31 with score  8.
+
+  - Undetermined dihedral  N3   C15  C16  N6  [        N-        C-      CH1-       NL],
+    finding best match:
+         1     X-        C-        C-    Y     7
+        33     X-      CH2-        C-    Y     8
+    Picked type  33 with score  8.
+
+  - Undetermined dihedral  C15  C16  N6   H63 [        C-      CH1-       NL-        H],
+    finding best match:
+         1     X-        C-        C-    Y     2
+         2     X-      CR0-       OA-    Y     3
+         5     X-        C-        N-    Y     5
+        12     X-      CH1-      CHx-    Y     6
+        19     X-        C-       NL-    Y     7
+        22     X-       CS-       NL-    Y     8
+    Picked type  22 with score  8.
+
+
+ FEATURE/AFLAG LIST
+
+   256  T T T F F F F F F T F T T F F F F F F T F T T F F F F F F F F F F F F F F F F F F T F T T F F F F F F F F T T T T F T T F F F F F F F F F F  (           0          -1          -1  )
+    16  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           1          -1          -1  )
+    16  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F F F  (           1          -1          -1  )
+   240  T F T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           2          -1          -1  )
+   240  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T T F F F F F F F F F F F F F F  (           2          -1          -1  )
+    10  T T T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           4          -1          -1  )
+   512  T T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           4          -1          -1  )
+    10  F F F T F F F F F T T T T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+   512  F F F F F F F F F T F T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+    10  F F F F F F F F F F F F F T F F F F F T T T T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+   512  F F F F F F F F F F F F F F F F F F F T F T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+    10  F F F F F F F F F F F F F F F F F F F F F F F T F F F F F F F F F F F F F F F F F T T T T T F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+   512  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F T T F F F F F F F F F F F F F F F F F F F F F F F F F  (           6          -1          -1  )
+    10  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F T T T F F F F F F F F F F F F F F  (           4          -1          -1  )
+   512  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T T T F F F F F F F F F F F F F F  (           4          -1          -1  )
+    10  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F F F F T T T T T F F F F F F F F F  (           6          -1          -1  )
+   512  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F T F T T F F F F F F F F F F  (           6          -1          -1  )
+    1f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    2f  F F F F F F F F F T F F F F F F F F F T F F F F F F F F F F F F F F F F F F F F F T F F F F F F F F F F F F F F T F F F F F F F F F F F F F
+    3f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    4f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    5f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    6f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    7f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+    8f  F F F F F F F F F T F F F F F F F F F T F F F F F F F F F F F F F F F F F F F F F T F F F F F F F F F F F F F F T F F F F F F F F F F F F F
+    9f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   10f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   11f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   12f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   13f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   14f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   15f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   16f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   17f  F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+   18f  T T T T F T F F F T F T T T F T F F F T F T T T F T F F T F F T F F T F F T F F F T F T T T F F T F F T F T T T T F T T T F T F F F T F F F
+
+
+ THANK YOU FOR USING PRODRG.....
+

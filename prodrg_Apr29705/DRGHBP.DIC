@@ -1,0 +1,86 @@
+# PRODRG output for HBPLUS input
+-u DRG
+# ATOM NAMES
+-M DRG " O7 "
+-M DRG " C20"
+-M DRG " O8 "
+-M DRG " C17"
+-M DRG " C19"
+-M DRG " N5 "
+-M DRG " C13"
+-M DRG " O4 "
+-M DRG " C10"
+-M DRG " C12"
+-M DRG " N2 "
+-M DRG " C5 "
+-M DRG " O1 "
+-M DRG " C1 "
+-M DRG " C2 "
+-M DRG " C3 "
+-M DRG " C4 "
+-M DRG " C11"
+-M DRG " N4 "
+-M DRG " N1 "
+-M DRG " C8 "
+-M DRG " O2 "
+-M DRG " C6 "
+-M DRG " C7 "
+-M DRG " C9 "
+-M DRG " C14"
+-M DRG " O5 "
+-M DRG " O3 "
+-M DRG " N3 "
+-M DRG " C15"
+-M DRG " O6 "
+-M DRG " C16"
+-M DRG " C18"
+-M DRG " N6 "
+# BONDS
+-T DRG " O7  C20:"
+-T DRG " C20 O8 :"
+-T DRG " C20 C17:"
+-T DRG " C17 C19:"
+-T DRG " C17 N5 :"
+-T DRG " N5  C13:"
+-T DRG " C13 O4 :"
+-T DRG " C13 C10:"
+-T DRG " C10 C12:"
+-T DRG " C10 N2 :"
+-T DRG " N2  C5 :"
+-T DRG " C5  O1 :"
+-T DRG " C5  C1 :"
+-T DRG " C1  C2 :"
+-T DRG " C1  N1 :"
+-T DRG " C2  C3 :"
+-T DRG " C3  C4 :"
+-T DRG " C4  C11:"
+-T DRG " C11 N4 :"
+-T DRG " N1  C8 :"
+-T DRG " C8  O2 :"
+-T DRG " C8  C6 :"
+-T DRG " C6  C7 :"
+-T DRG " C7  C9 :"
+-T DRG " C9  C14:"
+-T DRG " C9  N3 :"
+-T DRG " C14 O5 :"
+-T DRG " C14 O3 :"
+-T DRG " N3  C15:"
+-T DRG " C15 O6 :"
+-T DRG " C15 C16:"
+-T DRG " C16 C18:"
+-T DRG " C16 N6 :"
+# ACCEPTOR (-e) or DONOR (-E) types and number of H-bonds
+-e DRG " O7 " 2
+-e DRG " O8 " 2
+-E DRG " N5 " 1
+-e DRG " O4 " 2
+-E DRG " N2 " 1
+-e DRG " O1 " 2
+-E DRG " N4 " 3
+-E DRG " N1 " 1
+-e DRG " O2 " 2
+-e DRG " O5 " 2
+-e DRG " O3 " 2
+-E DRG " N3 " 1
+-e DRG " O6 " 2
+-E DRG " N6 " 3
